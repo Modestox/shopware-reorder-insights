@@ -1,0 +1,10 @@
+{
+  "modestox-reorder-insights": {
+    "productDetail": {
+      "tabOrders": "Orders",
+      "ordersTitle": "Orders with this product",
+      "emptyOrdersTitle": "No orders found",
+      "emptyOrdersSubline": "This product has not been ordered yet."
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<!--
+/**
+* Modestox - Shopware Reorder Insights
+*
+* @copyright Copyright (c) 2026 Sergey Kuzmitsky
+* @license   MIT
+* @link      https://github.com/Modestox/shopware-reorder-insights
+*/
+-->
+{% parent %}
+
+{% block sw_product_detail_content_tabs_additional %}
+    {% parent %}
+
+    <sw-tabs-item
+            v-if="isOrdersTabEnabled"
+            :route="{ name: 'sw.product.detail.orders', params: { id: $route.params.id } }"
+            :title="$tc('modestox-reorder-insights.productDetail.tabOrders')">
+        {{ $tc('modestox-reorder-insights.productDetail.tabOrders') }}
+    </sw-tabs-item>
+{% endblock %}
+
+{% block sw_product_detail_content %}
+    {% parent %}
+
+    <template v-if="isOrdersTabEnabled && $route.name === 'sw.product.detail.orders'">
+        <sw-product-detail-orders
+                v-if="product"
+                :product="product">
+        </sw-product-detail-orders>
+    </template>
+{% endblock %}

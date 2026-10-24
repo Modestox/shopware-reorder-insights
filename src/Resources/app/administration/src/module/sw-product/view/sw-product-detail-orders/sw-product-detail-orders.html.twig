@@ -1,0 +1,71 @@
+<!--
+/**
+* Modestox - Shopware Reorder Insights
+*
+* @copyright Copyright (c) 2026 Sergey Kuzmitsky
+* @license   MIT
+* @link      https://github.com/Modestox/shopware-reorder-insights
+*/
+-->
+<sw-card
+        class="sw-product-detail-orders"
+        :title="$tc('modestox-reorder-insights.productDetail.ordersTitle')"
+        :isLoading="isLoading">
+
+    <template #grid>
+        <sw-entity-listing
+                v-if="orders && orders.length > 0"
+                identifier="modestox-reorder-insights-grid"
+                :items="orders"
+                :columns="orderColumns"
+                :repository="orderRepository"
+                :showSelection="false"
+                :showSettings="true"
+                :allowColumnEdit="true"
+                :showActions="true"
+                :allowEdit="false"
+                :allowDelete="false"
+                :allowView="false"
+                :plainAppearance="true"
+                :isLoading="isLoading"
+                :fullPage="false">
+
+            <template #column-orderCustomer.firstName="{ item }">
+                <router-link
+                        v-if="item.orderCustomer && item.orderCustomer.customerId"
+                        :to="{ name: 'sw.customer.detail', params: { id: item.orderCustomer.customerId } }"
+                >
+                    {{ item.orderCustomer.lastName }}, {{ item.orderCustomer.firstName }}
+                </router-link>
+                <template v-else-if="item.orderCustomer">
+                    {{ item.orderCustomer.lastName }}, {{ item.orderCustomer.firstName }}
+                </template>
+            </template>
+
+            <!-- Количество -->
+            <template #column-quantity="{ item }">
+                {{ getLineItem(item) ? getLineItem(item).quantity : 0 }}
+            </template>
+
+            <!-- Цена -->
+            <template #column-unitPrice="{ item }">
+                {{ getItemPrice(item) }}
+            </template>
+
+            <!-- Дата заказа -->
+            <template #column-orderDateTime="{ item }">
+                <sw-time-ago
+                        :date="item.orderDateTime"
+                        :date-time-format="{ month: '2-digit', day: '2-digit' }"
+                />
+            </template>
+
+        </sw-entity-listing>
+
+        <sw-empty-state
+                v-else-if="!isLoading"
+                :title="$tc('modestox-reorder-insights.productDetail.emptyOrdersTitle')"
+                :subline="$tc('modestox-reorder-insights.productDetail.emptyOrdersSubline')">
+        </sw-empty-state>
+    </template>
+</sw-card>

@@ -1,0 +1,9 @@
+.sw-product-detail-orders {
+  .sw-data-grid__body .sw-data-grid__cell--actions .sw-context-button {
+    display: none;
+  }
+
+  .sw-data-grid__body .sw-data-grid__cell--actions {
+    padding: 0;
+  }
+}

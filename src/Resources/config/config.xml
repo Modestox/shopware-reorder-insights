@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* Modestox - Shopware Reorder Insights
+*
+* @copyright Copyright (c) 2026 Sergey Kuzmitsky
+* @license   MIT
+* @link      https://github.com/Modestox/shopware-reorder-insights
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://releases.shopware.com/sw6/config.xsd">
+
+    <card>
+        <title>General Settings</title>
+        <title lang="de-DE">Allgemeine Einstellungen</title>
+        <title lang="ru-RU">Основные настройки</title>
+
+        <!-- 1. Orders in Product View (Admin) -->
+        <input-field type="bool">
+            <name>enableOrdersInProductView</name>
+            <label>Enable "Orders in Product View" (Admin)</label>
+            <label lang="de-DE">"Bestellungen in Produktansicht" aktivieren (Admin)</label>
+            <label lang="ru-RU">Включить "Заказы в карточке товара" (Админка)</label>
+            <helpText>Shows orders containing the current product directly on the admin product page.</helpText>
+            <helpText lang="de-DE">Zeigt Bestellungen mit dem aktuellen Produkt direkt auf der Admin-Produktseite an.</helpText>
+            <helpText lang="ru-RU">Показывает заказы с этим товаром прямо на странице товара в админке.</helpText>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <!-- 2. Purchased Products in Customer Profile (Admin) -->
+        <input-field type="bool">
+            <name>enablePurchasedProductsInCustomer</name>
+            <label>Enable "Purchased Products" in Customer Profile (Admin)</label>
+            <label lang="de-DE">"Gekaufte Produkte" im Kundenprofil aktivieren (Admin)</label>
+            <label lang="ru-RU">Включить "Купленные товары" в профиле клиента (Админка)</label>
+            <helpText>Displays a summary of all unique products bought by the customer in their admin profile.</helpText>
+            <helpText lang="de-DE">Zeigt eine Übersicht aller vom Kunden gekauften Produkte in dessen Admin-Profil an.</helpText>
+            <helpText lang="ru-RU">Отображает список всех уникальных товаров, купленных клиентом, в его профиле в админке.</helpText>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <!-- 3. My Purchased Products & Reorder in Storefront -->
+        <input-field type="bool">
+            <name>enableStorefrontReorder</name>
+            <label>Enable "My Purchased Products &amp; Reorder" in Storefront Account</label>
+            <label lang="de-DE">"Meine gekauften Produkte &amp; Nachbestellung" im Storefront-Konto aktivieren</label>
+            <label lang="ru-RU">Включить "Мои покупки и повторный заказ" в Личном Кабинете</label>
+            <helpText>Adds a "Purchased Products" section with a "Buy again" button in customer account.</helpText>
+            <helpText lang="de-DE">Fügt den Bereich "Gekaufte Produkte" mit einem "Erneut kaufen"-Button im Kundenkonto hinzu.</helpText>
+            <helpText lang="ru-RU">Добавляет раздел "Купленные товары" с кнопкой "Купить снова" в личном кабинете покупателя.</helpText>
+            <defaultValue>true</defaultValue>
+        </input-field>
+    </card>
+</config>
