@@ -22,22 +22,37 @@ A Shopware 6 plugin that links products with order history, displays purchase me
 The compiled Administration assets are **not** part of this repository, so the Administration has to be built after installation.
 
 1. Go to the plugins directory of your Shopware project:
-   `cd custom/plugins`
 
+   ```bash
+   cd custom/plugins
+   ```
+   
 2. Clone the repository into a folder named `ModestoxReorderInsights`:
-   `git clone https://github.com/Modestox/shopware-reorder-insights.git ModestoxReorderInsights`
 
+   ```bash
+   git clone https://github.com/Modestox/shopware-reorder-insights.git ModestoxReorderInsights
+   ```
+   
 3. Install and activate the plugin:
-   `bin/console plugin:refresh`
-   `bin/console plugin:install --activate ModestoxReorderInsights`
 
+   ```bash
+   bin/console plugin:refresh
+   bin/console plugin:install --activate ModestoxReorderInsights
+   ```
+   
 4. Build the Administration and clear the cache:
-   `bin/build-administration.sh`
-   `bin/console cache:clear`
+
+   ```bash
+   bin/build-administration.sh
+   bin/console cache:clear
+   ```
 
    Tip: with `SHOPWARE_ADMIN_BUILD_ONLY_EXTENSIONS=1` the build skips the Shopware core and builds only the installed extensions, which is much faster:
-   `SHOPWARE_ADMIN_BUILD_ONLY_EXTENSIONS=1 bin/build-administration.sh`
 
+   ```bash
+   SHOPWARE_ADMIN_BUILD_ONLY_EXTENSIONS=1 bin/build-administration.sh
+   ```
+   
 ## Usage
 
 1. Open the Shopware Administration.

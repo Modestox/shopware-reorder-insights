@@ -22,21 +22,36 @@
 Скомпилированные ассеты административной панели **не входят** в состав репозитория, поэтому после установки необходимо пересобрать админку.
 
 1. Перейдите в директорию плагинов вашего проекта Shopware:
-   `cd custom/plugins`
+
+   ```bash
+   cd custom/plugins
+   ```
 
 2. Клонируйте репозиторий в папку `ModestoxReorderInsights`:
-   `git clone https://github.com/Modestox/shopware-reorder-insights.git ModestoxReorderInsights`
+   
+    ```bash
+   git clone https://github.com/Modestox/shopware-reorder-insights.git ModestoxReorderInsights
+   ```
 
 3. Установите и активируйте плагин:
-   `bin/console plugin:refresh`
-   `bin/console plugin:install --activate ModestoxReorderInsights`
+
+   ```bash
+   bin/console plugin:refresh
+   bin/console plugin:install --activate ModestoxReorderInsights
+   ```
 
 4. Пересоберите административную панель и очистите кэш:
-   `bin/build-administration.sh`
-   `bin/console cache:clear`
+
+   ```bash
+   bin/build-administration.sh
+   bin/console cache:clear
+   ```
 
    Совет: с флагом `SHOPWARE_ADMIN_BUILD_ONLY_EXTENSIONS=1` сборка пропустит ядро Shopware и пересоберет только установленные расширения, что значительно быстрее:
-   `SHOPWARE_ADMIN_BUILD_ONLY_EXTENSIONS=1 bin/build-administration.sh`
+
+   ```bash
+   SHOPWARE_ADMIN_BUILD_ONLY_EXTENSIONS=1 bin/build-administration.sh
+   ```
 
 ## Использование
 
