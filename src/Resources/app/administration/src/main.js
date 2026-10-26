@@ -9,3 +9,5 @@
 import './module/sw-product';
 import './module/sw-product/page/sw-product-detail';
 import './module/sw-product/view/sw-product-detail-orders';
+
+import './module/sw-customer';

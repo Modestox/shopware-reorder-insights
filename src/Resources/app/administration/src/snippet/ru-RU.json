@@ -3,8 +3,22 @@
     "productDetail": {
       "tabOrders": "Заказы",
       "ordersTitle": "Заказы с этим товаром",
-      "emptyOrdersTitle": "Заказов пока нет",
-      "emptyOrdersSubline": "Этот товар еще ни разу не покупали."
+      "emptyOrdersTitle": "Заказы не найдены",
+      "emptyOrdersSubline": "Этот товар еще ни разу не заказывали."
+    },
+    "customerDetail": {
+      "tabTitle": "Купленные товары",
+      "purchasedProductsTitle": "Купленных товаров",
+      "emptyTitle": "Нет купленных товаров",
+      "emptySubline": "Этот клиент еще не совершал покупок.",
+      "searchPlaceholder": "Поиск по названию или артикулу",
+      "clearSearch": "Очистить"
+    },
+    "detailPurchasedProducts": {
+      "columnProductName": "Название товара",
+      "columnProductNumber": "Артикул",
+      "columnTotalQuantity": "Всего куплено (шт)",
+      "columnLastOrderDate": "Дата последней покупки"
     }
   }
 }

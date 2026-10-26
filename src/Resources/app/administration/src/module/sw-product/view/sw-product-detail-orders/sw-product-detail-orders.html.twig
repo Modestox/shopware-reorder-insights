@@ -1,12 +1,13 @@
-<!--
+{#
 /**
-* Modestox - Shopware Reorder Insights
-*
-* @copyright Copyright (c) 2026 Sergey Kuzmitsky
-* @license   MIT
-* @link      https://github.com/Modestox/shopware-reorder-insights
-*/
--->
+ * Modestox - Shopware Reorder Insights
+ *
+ * @copyright Copyright (c) 2026 Sergey Kuzmitsky
+ * @license   MIT
+ * @link      https://github.com/Modestox/shopware-reorder-insights
+ */
+#}
+
 <sw-card
         class="sw-product-detail-orders"
         :title="$tc('modestox-reorder-insights.productDetail.ordersTitle')"
@@ -42,17 +43,14 @@
                 </template>
             </template>
 
-            <!-- Количество -->
             <template #column-quantity="{ item }">
                 {{ getLineItem(item) ? getLineItem(item).quantity : 0 }}
             </template>
 
-            <!-- Цена -->
             <template #column-unitPrice="{ item }">
                 {{ getItemPrice(item) }}
             </template>
 
-            <!-- Дата заказа -->
             <template #column-orderDateTime="{ item }">
                 <sw-time-ago
                         :date="item.orderDateTime"

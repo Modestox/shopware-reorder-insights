@@ -1,0 +1,101 @@
+{#
+/**
+ * Modestox - Shopware Reorder Insights
+ *
+ * @copyright Copyright (c) 2026 Sergey Kuzmitsky
+ * @license   MIT
+ * @link      https://github.com/Modestox/shopware-reorder-insights
+ */
+#}
+
+<sw-card-view class="sw-customer-detail-purchased-products">
+    <sw-card
+            :title="cardTitle"
+            :isLoading="isLoading">
+
+        <template #toolbar>
+            <div class="sw-customer-detail-purchased-products__search-container">
+                <sw-simple-search-field
+                        v-model:value="searchTerm"
+                        variant="form"
+                        :delay="500"
+                        :placeholder="$tc('modestox-reorder-insights.customerDetail.searchPlaceholder')"
+                        @search-term-change="onSearch">
+                </sw-simple-search-field>
+
+                <sw-button
+                        v-if="searchTerm"
+                        variant="critical"
+                        size="default"
+                        class="sw-customer-detail-purchased-products__clear-button"
+                        @click="onClearSearch">
+                    {{ $tc('modestox-reorder-insights.customerDetail.clearSearch') }}
+                </sw-button>
+            </div>
+        </template>
+
+        <template #default>
+            <div class="sw-customer-detail-purchased-products__grid-wrapper">
+                <sw-data-grid
+                        v-if="purchasedProducts.length > 0"
+                        :dataSource="purchasedProducts"
+                        :columns="columns"
+                        :showSelection="false"
+                        :showActions="false"
+                        :plainAppearance="true"
+                        :compactMode="true"
+                        :isLoading="isLoading"
+                        :sortBy="gridSortBy"
+                        :sortDirection="sortDirection"
+                        @column-sort="onSortColumn">
+
+                    <template #column-index="{ itemIndex }">
+                        {{ (page - 1) * limit + itemIndex + 1 }}
+                    </template>
+
+                    <template #column-label="{ item }">
+                        <router-link
+                                v-if="item.id"
+                                class="sw-data-grid__cell-value"
+                                :to="{ name: 'sw.product.detail', params: { id: item.id } }"
+                                :title="item.label">
+                            {{ item.label }}
+                        </router-link>
+                        <span v-else class="sw-data-grid__cell-value" :title="item.label">
+                            {{ item.label }}
+                        </span>
+                    </template>
+
+                    <template #column-productNumber="{ item }">
+                        <span class="sw-data-grid__cell-value" :title="item.productNumber">
+                            {{ item.productNumber }}
+                        </span>
+                    </template>
+
+                    <template #column-totalQuantity="{ item }">
+                        {{ item.totalQuantity }}
+                    </template>
+
+                    <template #column-lastOrderDateFormatted="{ item }">
+                        {{ item.lastOrderDateFormatted }}
+                    </template>
+                </sw-data-grid>
+
+                <sw-empty-state
+                        v-else-if="!isLoading"
+                        :title="$tc('modestox-reorder-insights.customerDetail.emptyTitle')"
+                        :subline="$tc('modestox-reorder-insights.customerDetail.emptySubline')">
+                </sw-empty-state>
+
+                <sw-pagination
+                        v-if="total > 0"
+                        :page="page"
+                        :limit="limit"
+                        :total="total"
+                        :steps="[10, 25, 50, 100]"
+                        @page-change="onPageChange">
+                </sw-pagination>
+            </div>
+        </template>
+    </sw-card>
+</sw-card-view>

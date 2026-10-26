@@ -3,8 +3,22 @@
     "productDetail": {
       "tabOrders": "Bestellungen",
       "ordersTitle": "Bestellungen mit diesem Produkt",
-      "emptyOrdersTitle": "Noch keine Bestellungen",
+      "emptyOrdersTitle": "Keine Bestellungen gefunden",
       "emptyOrdersSubline": "Dieses Produkt wurde noch nicht bestellt."
+    },
+    "customerDetail": {
+      "tabTitle": "Gekaufte Produkte",
+      "purchasedProductsTitle": "Übersicht gekaufter Produkte",
+      "emptyTitle": "Keine gekauften Produkte",
+      "emptySubline": "Dieser Kunde hat noch keine Produkte bestellt.",
+      "searchPlaceholder": "Nach Name oder Artikelnummer suchen",
+      "clearSearch": "Zurücksetzen"
+    },
+    "detailPurchasedProducts": {
+      "columnProductName": "Produktname",
+      "columnProductNumber": "Produktnummer",
+      "columnTotalQuantity": "Gesamtmenge",
+      "columnLastOrderDate": "Zuletzt gekauft"
     }
   }
 }

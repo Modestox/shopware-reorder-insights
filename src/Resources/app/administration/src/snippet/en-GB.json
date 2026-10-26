@@ -5,6 +5,20 @@
       "ordersTitle": "Orders with this product",
       "emptyOrdersTitle": "No orders found",
       "emptyOrdersSubline": "This product has not been ordered yet."
+    },
+    "customerDetail": {
+      "tabTitle": "Purchased Products",
+      "purchasedProductsTitle": "Purchased Products Summary",
+      "emptyTitle": "No purchased products",
+      "emptySubline": "This customer has not ordered any products yet.",
+      "searchPlaceholder": "Search by name or SKU",
+      "clearSearch": "Clear"
+    },
+    "detailPurchasedProducts": {
+      "columnProductName": "Product Name",
+      "columnProductNumber": "Product Number",
+      "columnTotalQuantity": "Total Quantity",
+      "columnLastOrderDate": "Last Purchased"
     }
   }
 }

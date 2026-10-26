@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
-* Modestox - Shopware Reorder Insights
-*
-* @copyright Copyright (c) 2026 Sergey Kuzmitsky
-* @license   MIT
-* @link      https://github.com/Modestox/shopware-reorder-insights
-*/
+ * Modestox - Shopware Reorder Insights
+ *
+ * @copyright Copyright (c) 2026 Sergey Kuzmitsky
+ * @license   MIT
+ * @link      https://github.com/Modestox/shopware-reorder-insights
+ */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://releases.shopware.com/sw6/config.xsd">
